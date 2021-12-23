@@ -145,7 +145,7 @@ h2 {
 h3 {
   font-size: 1rem;
   font-weight: 400;
-  line-height: var(--global-baseline);
+  line-height: var(--global-whitespace-md);
   margin: 0 0 24px;
   color: var(--color-neutral-xxxx-dark);
   /* text-align: center; */
@@ -252,7 +252,7 @@ footer {
   font-size: 0.8rem;
   color: var(--color-neutral-x-dark);
   margin-top: var(--global-whitespace);
-  margin-bottom: -7rem;
+  margin-bottom: -6rem;
   letter-spacing: 1px;
 }
 
@@ -268,6 +268,7 @@ footer {
   min-width: 50vw;
   border-radius: var(--global-borderRadius);
   box-shadow: var(--box-shadow);
+  height: 100%;
   /* overflow: hidden; */
 }
 
@@ -339,6 +340,24 @@ footer {
   justify-content: space-between;
   /* align-items: center; */
 }
+
+@media only screen and (max-width: 600px) {
+  .wrapper{
+    padding: var(--global-whitespace);
+  }
+  .c-buttons{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+  .js-randombtn{
+    margin-bottom: var(--global-whitespace);
+  }
+  footer{
+    margin-bottom: -3rem;
+  }
+}
+
 
 .c-button {
   font-size: 16px;

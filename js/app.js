@@ -35,6 +35,7 @@ let showResult = (queryResponse) => {
     for (i = 0; i < participants; i++) {
       html += `<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M114,588V204H498V588Zm191.64-12H447.78c9.93,0,14.33-4.46,14.34-14.47,0-18.63.07-37.25-.05-55.87a100.52,100.52,0,0,0-1-15.32C453.16,441.58,413.53,408,364,408q-57.94,0-115.89,0a102.83,102.83,0,0,0-15.7,1c-48.48,7.7-82.39,47.48-82.46,96.58q0,27.93,0,55.87c0,10.17,4.39,14.54,14.63,14.54ZM306,384A84,84,0,1,0,222,300,84.07,84.07,0,0,0,306,384Z" transform="translate(-114 -204)"/><path d="M305.64,576h-141c-10.24,0-14.63-4.37-14.63-14.54q0-27.94,0-55.87c.07-49.1,34-88.88,82.46-96.58a102.83,102.83,0,0,1,15.7-1q57.94-.12,115.89,0c49.5,0,89.13,33.62,97,82.38a100.52,100.52,0,0,1,1,15.32c.12,18.62.05,37.24.05,55.87,0,10-4.41,14.46-14.34,14.47Z" transform="translate(-114 -204)"/><path d="M306,384a84,84,0,1,1,84.06-83.89A84.08,84.08,0,0,1,306,384Z" transform="translate(-114 -204)"/></svg>`;
     }
+    // Bars to show how expensive and accessable the tasks are
     html += `</div>
             <label for="price">Price</label>
             <div class="c-activityBar" id="price">
@@ -50,6 +51,7 @@ let showResult = (queryResponse) => {
                 }%;"> 
                 </div>
             </div>`;
+    // Some tasks have a link to provide more info
     if (link != "") {
       html += `<a href="${link}" class="c-activityLink" target="blank">More info</a>
       <hr>`;
