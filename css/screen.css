@@ -1,0 +1,530 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  /* typography */
+  --root-font-size: 14;
+
+  /* colors */
+  --color-alpha: #1c95e6;
+  --color-alpha-light: #1aa3ff;
+
+  --color-neutral-xxx-light: #ffffff;
+  --color-neutral-xx-light: #f5f5f7;
+  --color-neutral-x-light: #ebeced;
+  --color-neutral: #dadee0;
+  --color-neutral-x-dark: #c6cacc;
+  --color-neutral-xx-dark: #a1a4a6;
+  --color-neutral-xxx-dark: #747b80;
+  --color-neutral-xxxx-dark: #5d6266;
+  --color-neutral-xxxxx-dark: #444b50;
+  --color-neutral-xxxxxx-dark: #444b50;
+  --color-neutral-xxxxxxx-dark: #16181a;
+
+  /* shadows */
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+
+  /* radius */
+  --global-borderRadius: 8px;
+  --input-borderRadius: 5px;
+
+  /* transitions */
+  --global-transition-alpha: 0.2s;
+  --global-transition-beta: 1s;
+
+  /* Baseline settings */
+  --global-baseline: 8px;
+  --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+
+  --global-whitespace-xs: calc(var(--global-baseline) * 0.5); /* = 4px */
+  --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+  --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+  --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+  --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+  --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+}
+
+/*------------------------------------*\
+  #GENERIC
+  \*------------------------------------*/
+
+/*
+      Generic: Page
+      ---
+      Global page styles + universal box-sizing:
+  */
+
+html {
+  font-size: 87.5%; /* = 14px */
+  line-height: var(--global-whitespace); /* = 25px */
+  font-family: "Inter", arial, sans-serif;
+  color: var(--color-neutral-xxxxxxx-dark);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(183, 33, 255);
+  background: linear-gradient(
+    32deg,
+    rgba(183, 33, 255, 1) 0%,
+    rgba(33, 212, 253, 1) 100%
+  );
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+  * Remove text-shadow in selection highlight:
+  * https://twitter.com/miketaylr/status/12228805301
+  *
+  * Customize the background color to match your design.
+  */
+
+::selection {
+  background: var(--color-alpha);
+  color: var(--color-neutral-xxx-light);
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+      Elements: typography
+      ---
+      Default markup for typographic elements
+  */
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: var(--global-whitespace-lg);
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: var(--global-baseline);
+  margin: 0 0 24px;
+  color: var(--color-neutral-xxxx-dark);
+  /* text-align: center; */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h4,
+h5,
+h6,
+.c-legend {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: normal;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  transition: all var(--transition-alpha);
+  color: var(--color-alpha);
+  outline-color: var(--color-alpha);
+  outline-width: medium;
+  outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+  color: var(--color-alpha);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-alpha-light);
+}
+
+label,
+input {
+  display: inline-block;
+}
+
+select {
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--color-neutral);
+}
+
+input:disabled {
+  cursor: not-allowed;
+}
+
+header {
+  /* margin-bottom: var(--global-whitespace); */
+}
+
+footer {
+  font-size: 0.8rem;
+  color: var(--color-neutral-x-dark);
+  margin-top: var(--global-whitespace);
+  margin-bottom: -7rem;
+  letter-spacing: 1px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: var(--color-neutral-xxx-light);
+  margin: var(--global-whitespace-lg) auto;
+  padding: var(--global-whitespace-xxl);
+  max-width: 75vw;
+  min-width: 50vw;
+  border-radius: var(--global-borderRadius);
+  box-shadow: var(--box-shadow);
+  /* overflow: hidden; */
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+.c-input {
+  /* --input-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out); */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  flex-grow: 3;
+  border-radius: var(--input-borderRadius, var(--global-borderRadius));
+  border: 1px solid var(--color-neutral);
+  /* background-color: var(--input-backgroundColor, var(--global-input-backgroundColor)); */
+  color: var(--color-neutral-xxxxxx-dark);
+  font-family: inherit;
+  line-height: calc(var(--global-baseline) * 3);
+  padding: var(--global-baseline) var(--global-whitespace-md);
+  outline: none;
+  transition: var(--global-transition-alpha);
+  box-sizing: border-box;
+}
+
+.c-input::placeholder {
+  color: var(--color-neutral-xx-dark);
+}
+
+.c-input:focus,
+.c-input:hover {
+  border-color: var(--color-alpha);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+.c-buttons {
+  padding: var(--global-whitespace) 0;
+  display: flex;
+  /* gap: var(--global-whitespace); */
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.c-button {
+  font-size: 16px;
+  border-radius: var(--input-borderRadius);
+  background: var(--color-alpha);
+  color: var(--color-neutral-xxx-light);
+  padding: var(--global-whitespace-md) var(--global-whitespace-xl);
+  transition: var(--global-transition-alpha);
+  position: relative;
+  display: inline-block;
+}
+
+.c-button::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-left-color: transparent;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 2.5s ease-in forwards;
+}
+
+.c-button:hover {
+  background-color: var(--color-alpha-light);
+  box-shadow: var(--box-shadow);
+  color: var(--color-neutral-xxx-light);
+}
+
+.c-button:active {
+  box-shadow: none;
+}
+
+.js-randombtn {
+  color: var(--color-alpha);
+  background: var(--color-neutral-xxx-light);
+  border: 1px solid var(--color-alpha);
+}
+
+form label {
+  padding: 0 var(--global-whitespace-md);
+}
+
+.c-activity {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.c-activityKey {
+  color: var(--color-neutral-xx-dark);
+  margin-top: 0;
+}
+
+.c-activityType {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.c-activityParticipants {
+  margin: 0 0 24px;
+}
+
+.c-activityParticipants svg {
+  height: 1.6rem;
+}
+
+.c-activityBar {
+  width: 100%;
+  height: 15px;
+  border-radius: var(--global-borderRadius);
+  background: var(--color-neutral);
+  margin-bottom: 24px;
+}
+
+.c-activityBar--progress {
+  width: 50%;
+  height: 100%;
+  background: rgb(33, 212, 253);
+  background: linear-gradient(
+    32deg,
+    rgba(33, 212, 253, 1) 0%,
+    rgba(183, 33, 255, 1) 100%
+  );
+  border-radius: var(--global-borderRadius);
+}
+
+.c-custom-select {
+  display: block;
+  position: relative;
+}
+
+.c-custom-select__symbol {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  pointer-events: none;
+  fill: var(--color-neutral-xxx-dark);
+}
+
+.c-errormsg {
+  color: var(--color-neutral-xxx-light);
+  padding: var(--global-baseline);
+  background-color: #e53939;
+  border-radius: var(--global-borderRadius);
+  margin: 0 0 24px;
+}
+.c-errormsg p {
+  margin: 0;
+}
+
+/* Animation */
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    color: var(--color-neutral-xxx-light);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    color: var(--color-neutral-xxx-light);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+button:focus > span {
+  /*animation*/
+  -webkit-animation: disappear 1s ease-in-out;
+  -ms-animation: disappear 1s ease-in-out;
+  animation: disappear 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  /* Chrome, Safari, Opera */
+  animation-fill-mode: forwards;
+}
+
+button:focus > img {
+  /*animation*/
+  -webkit-animation: appear 1s ease-in-out;
+  -ms-animation: appear 1s ease-in-out;
+  animation: appear 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  /* Chrome, Safari, Opera */
+  animation-fill-mode: forwards;
+}

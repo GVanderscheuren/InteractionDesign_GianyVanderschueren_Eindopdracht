@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bored Project</title>
+    <meta name="description" content="An app to end boredom" />
+
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/screen.css" />
+
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>The Bored Project</h1>
+        <h3>An app to end boredom</h3>
+      </header>
+      <hr />
+      <main class="c-app">
+        <div class="c-response js-response">
+          <!-- <h2 class="c-activity">Go for a run</h2>
+          <p class="c-activityKey">#6852505</p>
+          <label for="type">Type of activity</label>
+          <p class="c-activityType" id="type">recreational</p>
+          <label for="participants">Participants</label>
+          <p class="c-activityParticipants" id="participants">1</p>
+          <label for="price">Price</label>
+          <p class="c-activityPrice" id="price">0%</p>
+          <label for="access">Accessibility</label>
+          <p class="c-activityAccess" id="access">90%</p>
+          <a href="https://medium.com/dailyjs/5-ways-to-convert-a-value-to-string-in-javascript-6b334b2fc778" class="c-activityLink" target="blank">More info</a> -->
+        </div>
+        <form class="c-form" name="bored-form" action="" method="get">
+          <p>
+            <label for="type"> Type of Activity </label>
+            <span class="c-custom-select">
+              <select
+                class="c-input c-custom-select__input"
+                class=""
+                name="type"
+                id="type"
+              >
+                <option value="education">Education</option>
+                <option value="recreational">Recreational</option>
+                <option value="social">Social</option>
+                <option value="diy">DIY</option>
+                <option value="charity">Charity</option>
+                <option value="cooking">Cooking</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="music">Music</option>
+                <option value="busywork">busywork</option>
+              </select>
+              <svg
+                class="c-custom-select__symbol"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M7,10l5,5,5-5Z" />
+              </svg>
+            </span>
+          </p>
+          <p>
+            <label for="participants"> Participants </label>
+            <input
+              class="c-input"
+              type="number"
+              id="participants"
+              name="participants"
+              placeholder="Min 1"
+              min="1"
+              step="1"
+            />
+          </p>
+          <p>
+            <label for="accessibility"> Accessibility </label>
+            <input
+              class="c-input"
+              type="number"
+              id="accessibility"
+              name="accessibility"
+              placeholder="Between 0 and 10"
+              min="0"
+              max="10"
+              step="1"
+            />
+          </p>
+          <p>
+            <label for="price"> Price </label>
+            <input
+              class="c-input"
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Between 0 and 10"
+              min="0"
+              max="10"
+              step="1"
+            />
+          </p>
+          <div class="c-buttons">
+            <button type="button" class="o-button-reset c-button js-randombtn">
+              <span>Random</span
+              ><img
+                src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
+                height="62"
+                width="62"
+              />
+            </button>
+            <button type="submit" class="o-button-reset c-button js-searchbtn">
+              <span>Search</span
+              ><img
+                src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
+                height="62"
+                width="62"
+              />
+            </button>
+          </div>
+        </form>
+      </main>
+      <footer>
+        <p>
+          App made by Giany Vanderschueren for Howest /// MCT /// Interaction
+          Design
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
